@@ -2,15 +2,8 @@
 ;; Domain:     imagimationstudios.org.
 ;; Exported:   2026-03-19 03:17:17
 ;;
-;; Updated for GitHub Pages hosting (using A records for all domains)
+;; Clean zone file for import (A records only)
 ;;
-
-;; SOA Record
-imagimationstudios.org	3600	IN	SOA	hans.ns.cloudflare.com. dns.cloudflare.com. 2052555683 10000 2400 604800 3600
-
-;; NS Records
-imagimationstudios.org.	86400	IN	NS	hans.ns.cloudflare.com.
-imagimationstudios.org.	86400	IN	NS	kiki.ns.cloudflare.com.
 
 ;; A Records for imagimationstudios.org (@)
 imagimationstudios.org.	1	IN	A	185.199.108.153
@@ -24,14 +17,4 @@ www.imagimationstudios.org.	1	IN	A	185.199.109.153
 www.imagimationstudios.org.	1	IN	A	185.199.110.153
 www.imagimationstudios.org.	1	IN	A	185.199.111.153
 
-;; MX Records (Untouched Google Workspace)
-imagimationstudios.org.	3600	IN	MX	10 alt3.aspmx.l.google.com.
-imagimationstudios.org.	3600	IN	MX	5 alt1.aspmx.l.google.com.
-imagimationstudios.org.	3600	IN	MX	5 alt2.aspmx.l.google.com.
-imagimationstudios.org.	3600	IN	MX	10 alt4.aspmx.l.google.com.
-imagimationstudios.org.	3600	IN	MX	1 aspmx.l.google.com.
-
-;; TXT Records (Untouched Verification & DKIM)
-cf2024-1._domainkey.imagimationstudios.org.	1	IN	TXT	"v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiweykoi+o48IOGuP7GR3X0MOExCUDY/BCRHoWBnh3rChl7WhdyCxW3jgq1daEjPPqoi7sJvdg5hEQVsgVRQP4DcnQDVjGMbASQtrY4WmB1VebF+RPJB2ECPsEDTpeiI5ZyUAwJaVX7r6bznU67g7LvFq35yIo4sdlmtZGV+i0H4cpYH9+3JJ78k" "m4KXwaf9xUJCWF6nxeD+qG6Fyruw1Qlbds2r85U9dkNDVAS3gioCvELryh1TxKGiVTkg4wqHTyHfWsp7KD3WQHYJn0RyfJJu6YEmL77zonn7p2SRMvTMP3ZEXibnC9gz3nnhR6wcYL8Q7zXypKTMD58bTixDSJwIDAQAB"
-imagimationstudios.org.	3600	IN	TXT	"v=spf1 include:_spf.google.com ~all"
-imagimationstudios.org.	3600	IN	TXT	"google-site-verification=-mCttvYywoY87THORn1MieaPDP5-PqUP5SyQc7b0aKc"
+;; Note: Other records (MX, TXT, etc.) are already in Cloudflare and don't need to be re-imported.
