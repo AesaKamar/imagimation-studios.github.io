@@ -2,7 +2,8 @@
 ;; Domain:     imagimationstudios.org.
 ;; Exported:   2026-03-19 03:17:17
 ;;
-;; Clean zone file for import (A records only)
+;; Updated for GitHub Pages hosting (A records for @, CNAME for www)
+;; This follows GitHub's recommended path for subdomain configuration.
 ;;
 
 ;; A Records for imagimationstudios.org (@)
@@ -11,10 +12,8 @@ imagimationstudios.org.	1	IN	A	185.199.109.153
 imagimationstudios.org.	1	IN	A	185.199.110.153
 imagimationstudios.org.	1	IN	A	185.199.111.153
 
-;; A Records for www.imagimationstudios.org
-www.imagimationstudios.org.	1	IN	A	185.199.108.153
-www.imagimationstudios.org.	1	IN	A	185.199.109.153
-www.imagimationstudios.org.	1	IN	A	185.199.110.153
-www.imagimationstudios.org.	1	IN	A	185.199.111.153
+;; CNAME Record for www.imagimationstudios.org
+;; (Points to your base GitHub Pages domain)
+www.imagimationstudios.org.	1	IN	CNAME	aesakamar.github.io.
 
-;; Note: Other records (MX, TXT, etc.) are already in Cloudflare and don't need to be re-imported.
+;; Note: MX, TXT, etc. are already in Cloudflare and untouched.
