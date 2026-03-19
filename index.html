@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiMation Studios</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImagiMation Studios</title>
+  <meta name="description" content="ImagiMation Studios creates interactive apps for kids and cats. Makers of Cat Game: Tadpole Chase and Bolo Baccho.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to ImagiMation Studios</h1>
-        <p>Creating stunning visuals and immersive experiences</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>At ImagiMation Studios, we bring imagination to life through cutting-edge animation and design.</p>
-        </section>
-        <section id="portfolio">
-            <h2>Our Portfolio</h2>
-            <p>Check out some of our latest projects showcasing the power of creativity and innovation.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email us at <a href="mailto:contact@imagimationstudios.com">contact@imagimationstudios.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 ImagiMation Studios. All rights reserved.</p>
-    </footer>
+  <nav class="nav">
+    <a href="/" class="nav-brand">✨ ImagiMation Studios</a>
+    <div class="nav-links">
+      <a href="/cat-game/">Cat Game</a>
+      <a href="/bolobaccho/">Bolo Baccho</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-glow" style="background: radial-gradient(circle, rgba(255,196,0,0.1) 0%, rgba(255,107,53,0.05) 40%, transparent 70%);"></div>
+    <div>
+      <h1>Apps that spark<br><span class="gradient-main">imagination.</span></h1>
+      <p>Interactive, beautifully crafted apps for kids &amp; cats. Designed with love, safety, and a little bit of magic.</p>
+    </div>
+  </header>
+
+  <section class="apps">
+    <h2>Our Apps</h2>
+    <div class="app-grid">
+      <a href="/cat-game/" class="app-card">
+        <h3>🐟 Cat Game: Tadpole Chase</h3>
+        <div class="tagline tagline--gold">Interactive Fish Toy for Cats</div>
+        <div class="desc">Procedural soft-body tadpoles that wiggle, hide, and flee from your cat's paws. 100% Cat-Safe design.</div>
+        <div class="platforms">
+          <span class="platform-tag">iOS</span>
+        </div>
+      </a>
+      <a href="/bolobaccho/" class="app-card">
+        <h3>🔤 Bolo Baccho</h3>
+        <div class="tagline tagline--teal">Hindi & English Learning for Kids</div>
+        <div class="desc">Master Hindi through tappable words, animations, and interactive lessons. One-time purchase, lifetime access.</div>
+        <div class="platforms">
+          <span class="platform-tag">iOS</span>
+          <span class="platform-tag">Android</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 ImagiMation Studios &nbsp;·&nbsp; <a href="/privacy/">Privacy</a> &nbsp;·&nbsp; <a href="mailto:contact@imagimationstudios.org">Contact</a></p>
+  </footer>
 </body>
 </html>
