@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to Cat Game: Tadpole Chase...</title>
+  <meta name="description" content="Redirecting you to the appropriate app store for Cat Game: Tadpole Chase.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imagimationstudios.org/cat-game/play/">
+  <meta property="og:title" content="Play Cat Game: Tadpole Chase">
+  <meta property="og:description" content="Swimming you to the appropriate app store for Cat Game: Tadpole Chase.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://imagimationstudios.org/cat-game/play/">
+  <meta property="twitter:title" content="Play Cat Game: Tadpole Chase">
+  <meta property="twitter:description" content="Swimming you to the appropriate app store for Cat Game: Tadpole Chase.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .loader-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .tadpole-emoji {
+      font-size: 5rem;
+      display: inline-block;
+      animation: swim 2s ease-in-out infinite;
+    }
+    @keyframes swim {
+      0%, 100% { transform: translateX(-12px) rotate(-8deg); }
+      50% { transform: translateX(12px) rotate(8deg); }
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin: 0 auto 2rem;
+    }
+    .manual-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 280px;
+    }
+  </style>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7476e9e6091445eeb8d64b60b9b6bf45"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <div class="loader-container">
+    <span class="tadpole-emoji">🐟</span>
+  </div>
+  
+  <h1>Swimming to Store...</h1>
+  <p>Please wait a moment while we redirect you to the correct app store for your device.</p>
+
+  <div class="manual-links">
+    <a href="https://apps.apple.com/us/app/cat-game-tadpole-chase/id6757323062" class="store-btn" style="justify-content: center;">
+      🍎 Download for iOS
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=org.aesakamar.cat_game" class="store-btn" style="justify-content: center;">
+      🤖 Download for Android
+    </a>
+  </div>
+
+  <script>
+    const iosUrl = "https://apps.apple.com/us/app/cat-game-tadpole-chase/id6757323062";
+    const androidUrl = "https://play.google.com/store/apps/details?id=org.aesakamar.cat_game";
+    const fallbackUrl = "https://imagimationstudios.org/cat-game/";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detect device platform and redirect
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location.href = iosUrl;
+    } else if (/android/i.test(userAgent)) {
+      window.location.href = androidUrl;
+    } else {
+      // For desktop/fallback, wait a brief second for visual feedback, then redirect to product page
+      setTimeout(() => {
+        window.location.href = fallbackUrl;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
