@@ -18,6 +18,9 @@
   <meta property="twitter:title" content="Play Cat Game: Tadpole Chase">
   <meta property="twitter:description" content="Swimming you to the appropriate app store for Cat Game: Tadpole Chase.">
 
+  <link rel="icon" type="image/png" href="/cat-game/icon.png">
+  <link rel="shortcut icon" href="/cat-game/icon.png">
+  <link rel="apple-touch-icon" href="/cat-game/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,16 +37,19 @@
     }
     .loader-container {
       position: relative;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
-    .tadpole-emoji {
-      font-size: 5rem;
-      display: inline-block;
-      animation: swim 2s ease-in-out infinite;
+    .app-icon-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 196, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      animation: pulse-icon 2s ease-in-out infinite;
     }
-    @keyframes swim {
-      0%, 100% { transform: translateX(-12px) rotate(-8deg); }
-      50% { transform: translateX(12px) rotate(8deg); }
+    @keyframes pulse-icon {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
     }
     h1 {
       font-size: 1.5rem;
@@ -68,7 +74,7 @@
 </head>
 <body>
   <div class="loader-container">
-    <span class="tadpole-emoji">🐟</span>
+    <img src="/cat-game/icon.png" alt="Cat Game: Tadpole Chase App Icon" class="app-icon-img">
   </div>
   
   <h1>Swimming to Store...</h1>
