@@ -21,11 +21,17 @@ class Page(HTMLParser):
             if link: self.links.append(link)
         if tag=='script': self.analytics.append(a.get('src','inline script'))
         if tag=='img': assert 'alt' in a, 'Image missing alt attribute'
-pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html')}
-assert len(pages)==6
-for path,page in pages.items():
+content_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name!='play'}
+play_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name=='play'}
+assert len(content_pages)==6, f'Expected 6 content pages, got {len(content_pages)}'
+assert len(play_pages)==1, f'Expected 1 play page, got {len(play_pages)}'
+pages={**content_pages, **play_pages}
+for path,page in content_pages.items():
     assert page.h1==1 and page.title and page.canonical, f'Invalid document metadata: {path}'
     assert not page.analytics, f'Unexpected script: {path}'
+for path,page in play_pages.items():
+    assert page.h1==1 and page.title and page.canonical, f'Invalid document metadata: {path}'
+for path,page in pages.items():
     for link in page.links:
         u=urlsplit(link)
         if u.scheme or u.netloc: continue
@@ -36,4 +42,4 @@ for path,page in pages.items():
         if u.fragment:
             linked=pages.get(target) or Page(target)
             assert u.fragment in linked.ids, f'Broken fragment {link} in {path}'
-print('PASS: six Seethe pages, internal links and anchors, metadata, image descriptions, and no embedded analytics.')
+print('PASS: seven Seethe pages (six static + play redirect), internal links and anchors, metadata, and image descriptions.')

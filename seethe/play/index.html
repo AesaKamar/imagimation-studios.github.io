@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to Seethe — ImagiMation Studios</title>
+  <meta name="description" content="Redirecting you to the appropriate app store for Seethe.">
+  <link rel="canonical" href="https://imagimationstudios.org/seethe/play/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imagimationstudios.org/seethe/play/">
+  <meta property="og:title" content="Get Seethe">
+  <meta property="og:description" content="Connecting you to the appropriate app store for Seethe.">
+  <meta property="og:image" content="https://imagimationstudios.org/seethe/assets/icon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://imagimationstudios.org/seethe/play/">
+  <meta property="twitter:title" content="Get Seethe">
+  <meta property="twitter:description" content="Connecting you to the appropriate app store for Seethe.">
+  <meta property="twitter:image" content="https://imagimationstudios.org/seethe/assets/icon.png">
+
+  <link rel="icon" href="/seethe/assets/icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      background: #0b0c10;
+      color: #f7f0fa;
+    }
+    .loader-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .seethe-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 12px 36px rgba(223, 191, 234, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.05); filter: brightness(1.15); }
+    }
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f7f0fa;
+    }
+    p {
+      color: #c8c1d0;
+      font-size: 0.95rem;
+      max-width: 340px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+    .manual-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 300px;
+    }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      background: #14111a;
+      border: 1px solid #38303f;
+      color: #f7f0fa;
+      text-decoration: none;
+      font-weight: 600;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .store-btn:hover {
+      border-color: #dfbfea;
+      background: #1b1723;
+    }
+    .store-btn.primary {
+      background: #dfbfea;
+      color: #0b0c10;
+      border-color: #dfbfea;
+    }
+    .store-btn.primary:hover {
+      background: #f0dcfa;
+    }
+    .fallback-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #ada4b5;
+    }
+    .fallback-note a {
+      color: #dfbfea;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <img src="/seethe/assets/icon.png" alt="Seethe app icon" class="seethe-icon" width="96" height="96">
+  </div>
+  
+  <h1>Connecting to Store...</h1>
+  <p>Redirecting you to the appropriate app store for your device.</p>
+
+  <div class="manual-links">
+    <a href="https://play.google.com/store/apps/details?id=org.imagimationstudios.seethe" class="store-btn primary">
+      🤖 Download on Google Play
+    </a>
+    <a href="https://apps.apple.com/app/seethe/id6813619044" class="store-btn">
+      🍎 Download for iOS &amp; Mac
+    </a>
+  </div>
+
+  <p class="fallback-note"><a href="/seethe/">Or explore Seethe on the web →</a></p>
+
+  <script>
+    const iosUrl = "https://apps.apple.com/app/seethe/id6813619044";
+    const androidUrl = "https://play.google.com/store/apps/details?id=org.imagimationstudios.seethe";
+    const fallbackUrl = "https://imagimationstudios.org/seethe/";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera || "";
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isAndroid = /android/i.test(userAgent);
+    const isMac = /Macintosh|Mac OS X/.test(userAgent) && !isIOS;
+
+    if (isAndroid) {
+      window.location.href = androidUrl;
+    } else if (isIOS || isMac) {
+      window.location.href = iosUrl;
+    } else {
+      setTimeout(() => {
+        window.location.href = fallbackUrl;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
