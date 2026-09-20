@@ -16,8 +16,8 @@ class Page(HTMLParser):
         if tag=='h1': self.h1+=1
         if tag=='title': self.title=True
         if tag=='link' and a.get('rel')=='canonical': self.canonical=True
-        if tag in ['a','link','img','script']:
-            link=a.get('href') or a.get('src')
+        if tag in ['a','link','img','script','video','source']:
+            link=a.get('href') or a.get('src') or a.get('poster')
             if link: self.links.append(link)
         if tag=='script': self.analytics.append(a.get('src','inline script'))
         if tag=='img': assert 'alt' in a, 'Image missing alt attribute'
