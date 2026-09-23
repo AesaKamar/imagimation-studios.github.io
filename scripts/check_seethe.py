@@ -23,12 +23,15 @@ class Page(HTMLParser):
         if tag=='img': assert 'alt' in a, 'Image missing alt attribute'
 content_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name!='play'}
 play_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name=='play'}
-assert len(content_pages)==6, f'Expected 6 content pages, got {len(content_pages)}'
+assert len(content_pages)==7, f'Expected 7 content pages, got {len(content_pages)}'
 assert len(play_pages)==1, f'Expected 1 play page, got {len(play_pages)}'
 pages={**content_pages, **play_pages}
 for path,page in content_pages.items():
     assert page.h1==1 and page.title and page.canonical, f'Invalid document metadata: {path}'
-    assert not page.analytics, f'Unexpected script: {path}'
+    if path.parent.name=='learn':
+        assert page.analytics==['learn.js'], f'Unexpected learning-page script: {path}'
+    else:
+        assert not page.analytics, f'Unexpected script: {path}'
 for path,page in play_pages.items():
     assert page.h1==1 and page.title and page.canonical, f'Invalid document metadata: {path}'
 for path,page in pages.items():
@@ -41,5 +44,6 @@ for path,page in pages.items():
         assert target.is_file(), f'Broken link {link} in {path}'
         if u.fragment:
             linked=pages.get(target) or Page(target)
-            assert u.fragment in linked.ids, f'Broken fragment {link} in {path}'
-print('PASS: seven Seethe pages (six static + play redirect), internal links and anchors, metadata, and image descriptions.')
+            dynamic_scene = target.parent.name=='learn' and u.fragment.startswith('scene-') and u.fragment[6:].isdigit() and 1 <= int(u.fragment[6:]) <= 12
+            assert u.fragment in linked.ids or dynamic_scene, f'Broken fragment {link} in {path}'
+print('PASS: eight Seethe pages (seven content + play redirect), internal links and anchors, metadata, and image descriptions.')
