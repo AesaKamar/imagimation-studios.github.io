@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#090b10">
-  <title>A few rules, a thousand shapes — Seethe · ImagiMation Studios</title>
+  <title>How Fractal Flames Work: 12 Experiments | Seethe</title>
   <meta name="description" content="Twelve interactive experiments reveal how Seethe turns a few mathematical rules into living fractal light.">
   <link rel="canonical" href="https://imagimationstudios.org/seethe/learn/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="A few rules, a thousand shapes — Seethe">
+  <meta property="og:title" content="A few rules, a thousand shapes | Seethe">
   <meta property="og:description" content="Move a dot, bend a rule, and discover the machinery behind Seethe’s living fractal flames.">
   <meta property="og:url" content="https://imagimationstudios.org/seethe/learn/">
   <meta property="og:image" content="https://imagimationstudios.org/seethe/assets/poster.jpg">
@@ -23,14 +23,27 @@
   <main>
     <div class="intro">
       <p class="eyebrow">A FEW RULES, A THOUSAND SHAPES</p>
-      <h1>Build a little chaos.<br>Watch beauty emerge.</h1>
+      <h1>How fractal flames work</h1>
       <p>No equations to memorize. Move a dot, bend a rule, and follow the machinery that makes Seethe feel alive.</p>
       <p class="hint">Twelve small experiments. Start anywhere. Every animation starts paused.</p>
       <nav aria-label="Chapters"><a href="#scene-1">01 · Shape</a><a href="#scene-4">02 · Light</a><a href="#scene-6">03 · Change</a><a href="#scene-9">04 · Touch</a><a href="#scene-11">05 · Keep</a></nav>
     </div>
     <p id="loading" role="status">Loading the flame engine…</p>
     <noscript><p>These experiments need JavaScript. Seethe makes flames by repeatedly moving points through a few rules, collecting their visits into an image, and gradually changing the rules to create motion.</p></noscript>
-    <div id="experiments"></div>
+    <div id="experiments">
+<section id="scene-1"><p class="kicker">EXPERIMENT 01</p><h2>A shape without an outline</h2><p class="description">Choose a corner. Move halfway toward it. Repeat. There is no instruction here to draw a triangle, or to leave a hole.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">A few local rules can produce a whole shape. The gaps are a consequence of where the rules can take you.</p></section>
+<section id="scene-2"><p class="kicker">EXPERIMENT 02</p><h2>Where can a point possibly go?</h2><p class="description">Shrink the entire triangle halfway toward each corner. Those three smaller triangles contain every possible next position. Do it again.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">The empty middle never gets visited because no rule leads there. Repeat the argument and smaller holes appear inside the survivors.</p></section>
+<section id="scene-3"><p class="kicker">EXPERIMENT 03</p><h2>Bend the rule, bend the world</h2><p class="description">Straight rules make straight-edged patterns. A swirl bends space before the next step. Turn it up and watch the grid, and the repeated visits, change together.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">A flame is the long-term result of moving through distorted space. A tiny rule can leave a huge signature.</p></section>
+<section id="scene-4"><p class="kicker">EXPERIMENT 04</p><h2>The picture is evidence</h2><p class="description">A handful of visits gives you scattered clues. More visits reveal the fine structure. Change the pixel grid too: more pixels divide the same evidence into smaller piles.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Resolution is the number of little buckets. Detail also depends on how much evidence each bucket receives.</p></section>
+<section id="scene-5"><p class="kicker">EXPERIMENT 05</p><h2>Color remembers the route</h2><p class="description">Every rule has a color address. Each visit moves your address halfway toward that rule’s address. The palette turns the address into light.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Two points can reach the same neighborhood by different routes, and carry different colors into it.</p></section>
+<section id="scene-6"><p class="kicker">EXPERIMENT 06</p><h2>One small change, everywhere</h2><p class="description">Move one rule sideways. Every later visit inherits the consequences. The camera, palette, and sampling choices stay fixed.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Motion can come from changing the recipe itself. The whole structure responds, rather than sliding across the screen.</p></section>
+<section id="scene-7"><p class="kicker">EXPERIMENT 07</p><h2>Which rule should become which?</h2><p class="description">Two recipes can contain exactly the same rules in a different order. Matching by position makes them take a detour. Matching by resemblance keeps the shape together.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Smooth change begins with a good correspondence: decide what belongs with what before moving anything.</p></section>
+<section id="scene-8"><p class="kicker">EXPERIMENT 08</p><h2>Changing a flame or fading a picture?</h2><p class="description">Both panels have the same starting and ending flames. On the left, the rules change. On the right, two finished pictures fade over each other. Stop halfway.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">A morph creates an intermediate structure. A dissolve mixes two structures that already exist.</p></section>
+<section id="scene-9"><p class="kicker">EXPERIMENT 09</p><h2>Keep the thing under your finger</h2><p class="description">Pick an off-center point, then zoom. A center-based zoom lets it drift away. An anchored zoom moves the view enough to keep your chosen point in place.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Natural zooming is two actions together: change the scale, then correct the position.</p></section>
+<section id="scene-10"><p class="kicker">EXPERIMENT 10</p><h2>Spend the next sixteen milliseconds wisely</h2><p class="description">Some flames cost more to calculate. Give the renderer a harder scene and watch a fixed work budget miss its deadline. Then let it adjust how much work it attempts.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Smoothness depends on finishing in time. Reduce work quickly when overloaded; grow it carefully when there is room.</p></section>
+<section id="scene-11"><p class="kicker">EXPERIMENT 11</p><h2>Send the recipe, keep the flame</h2><p class="description">Change the sender’s flame, then send it across. This little exchange uses the same session encoder and decoder as Seethe. The recipient gets a recipe they can explore.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">A picture keeps one view. A recipe keeps the machinery that can make the view again.</p></section>
+<section id="scene-12"><p class="kicker">EXPERIMENT 12</p><h2>Build the road before you travel</h2><p class="description">The TV can dwell on a flame while it prepares the next path. Completed paths become roads it can revisit. When the collection fills, old unoccupied branches make room.</p><div class="stage"></div><div class="controls"></div><p class="readout" role="status"></p><p class="takeaway">Preparation turns spare computing time into smooth future playback. A useful cache remembers paths as well as destinations.</p></section>
+</div>
     <footer><p>Real flames use Seethe’s shared engine. Timing and cache diagrams are interactive models. Nothing here uploads a share or stores personal data.</p><p><a href="/seethe/">Discover Seethe</a> · <a href="/seethe/play/">Get the app</a> · <a href="/">ImagiMation Studios</a></p></footer>
   </main>
   <script type="module" src="learn.js"></script>

@@ -19,7 +19,7 @@ class Page(HTMLParser):
         if tag in ['a','link','img','script','video','source']:
             link=a.get('href') or a.get('src') or a.get('poster')
             if link: self.links.append(link)
-        if tag=='script': self.analytics.append(a.get('src','inline script'))
+        if tag=='script' and a.get('type')!='application/ld+json': self.analytics.append(a.get('src','inline script'))
         if tag=='img': assert 'alt' in a, 'Image missing alt attribute'
 content_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name!='play'}
 play_pages={p:Page(p) for p in (ROOT/'seethe').rglob('*.html') if p.parent.name=='play'}
